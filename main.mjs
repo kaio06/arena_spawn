@@ -8,8 +8,6 @@ import FighterSquad from './SquadLogic/fighterSquad.mjs';
 import SpawnManager from './SpawnLogic/spawnManager.mjs';
 import FlagRunnerSquad from './SquadLogic/flagRunnerSquad.mjs';
 
-/** @type {Number} */
-let totalSquad = 0;
 /** @type {Array<AbstractSquad>} */
 let squadList = []; 
 /** @type {StructureSpawn} */
@@ -20,9 +18,6 @@ let ennemySpawn = getObjectsByPrototype(StructureSpawn).find(spawn => !spawn.my)
 
 /** @type {Array<Flag>} */
 let flags = getObjectsByPrototype(Flag);
-
-/** @type {Array<AbstractCreepLogic>} */
-let creeps = []
 
 /** @type {SpawnManager} */
 let mySpawnManager = new SpawnManager(mySpawn);
@@ -43,5 +38,4 @@ export function loop() {
         console.log("Running squad logic..."); 
         squad.runSquadLogic();
     }
-
 }
