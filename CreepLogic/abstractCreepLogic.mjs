@@ -18,9 +18,9 @@ export default class AbstractCreepLogic {
         this.#myCreep = creep;
     }
     /** 
-     * @param {Creep | Structure} target
+     * @param {Creep | Structure | null} target
      */
-    run(target){
+    run(target = undefined){
         throw new Error("Method 'run' must be implemented.");
     }
     /** @returns {Array<BodyPartType>} */

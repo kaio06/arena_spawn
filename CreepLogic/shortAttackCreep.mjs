@@ -12,15 +12,13 @@ export default class shortAttackCreep extends AbstractCreepLogic {
 
     run(target){
         if(!this.isBeeingSpawned()){
-            console.log(this.me());
-            console.log(this.me().body);
             if(this.me().attack(target) == ERR_NOT_IN_RANGE) {
             this.me().moveTo(target);
-    }
+           }
         }
     }
     /** @returns {Array<BodyPartType>} */
     static getRequiredBodyParts(){
-        return [ATTACK, MOVE, ATTACK, MOVE];
+        return [ATTACK, MOVE, ATTACK, MOVE, ATTACK, MOVE, ATTACK, MOVE];
     }
 }
