@@ -35,4 +35,12 @@ export default class AbstractCreepLogic {
     me(){
         return this.#myCreep;
     }
+
+    /**
+     * 
+     * @returns {boolean}
+     */
+    isDead(){
+        return this.#myCreep.hits <= 0; 
+    }
 }

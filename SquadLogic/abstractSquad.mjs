@@ -1,6 +1,9 @@
 import { Creep } from "game/prototypes";
 import AbstractCreepLogic from "../CreepLogic/abstractCreepLogic.mjs";
 import SpawnManager from "../SpawnLogic/spawnManager.mjs";
+
+/** @import {Position} from "game/prototypes/game-object" */
+
 /**
  * Abstract Class AbstractSquad
  */
@@ -84,5 +87,23 @@ export default class AbstractSquad {
             this.#mySpawnManager.spawnACreep(this.#squadMembers, creepLogicToSpawn);
             console.log("total spawned creeps: " + this.#squadMembers.length);
         }
+    }
+
+    /**
+     * @return {Position}
+     */
+    getSquadPosition(){
+        let barycentre ={x:0, y:0};
+        let count=0;
+        for(const member of this.#squadMembers){
+            if(member.me().exists==true && member.isDead()==false){
+                barycentre.x += member.me().x;
+                barycentre.y += member.me().y;
+                count++;
+            }
+        }
+        barycentre.x = Math.floor(barycentre.x / count);
+        barycentre.y = Math.floor(barycentre.y / count);
+        return barycentre;
     }
  }

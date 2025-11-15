@@ -19,6 +19,6 @@ export default class shortAttackCreep extends AbstractCreepLogic {
     }
     /** @returns {Array<BodyPartType>} */
     static getRequiredBodyParts(){
-        return [ATTACK, MOVE, ATTACK, MOVE, ATTACK, MOVE, ATTACK, MOVE];
+        return [ATTACK, MOVE, ATTACK, MOVE, ATTACK, MOVE, ATTACK, MOVE,ATTACK, MOVE, ATTACK, MOVE, ATTACK, MOVE, ATTACK, MOVE,ATTACK, MOVE, ATTACK, MOVE, ATTACK, MOVE, ATTACK, MOVE]
     }
 }
